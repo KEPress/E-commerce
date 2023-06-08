@@ -1,0 +1,16 @@
+@mixin mobile {
+    @media (max-width: 770px) {
+        @content;
+    }
+}
+
+.categories {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+
+    @include mobile { 
+        padding: 0px;
+        flex-direction: column;
+    }
+}

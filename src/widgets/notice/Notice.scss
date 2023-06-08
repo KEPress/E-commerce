@@ -1,0 +1,18 @@
+@mixin mobile {
+    @media (max-width: 770px) {
+        @content;
+    }
+}
+
+.notice {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: teal;
+    color: white;
+    font-size: larger;
+    font-weight: bolder;
+
+    @include mobile { display: none; }
+}

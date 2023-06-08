@@ -1,0 +1,37 @@
+$map: (plain: white, action: teal);
+
+@function colorMap($key) {
+    @return map-get($map, $key);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+
+    input {
+        flex: 1;
+        min-width: 40%;
+        margin: 10px 0px;
+        padding: 10px;
+    }
+
+    button {
+        width: 40%;
+        border: none;
+        padding: 15px 20px;
+        background-color: colorMap(action);
+        color: colorMap(plain);
+        margin-bottom: 10px;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+
+    a {
+        margin: 5px 0px;
+        font-size: 12px;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+

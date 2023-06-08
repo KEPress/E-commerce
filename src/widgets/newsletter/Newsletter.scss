@@ -1,0 +1,55 @@
+$map: (main: #fcf5f5, plain: white, submit: teal);
+
+
+@function colorMap($key) {
+    @return map-get($map, $key);
+ }
+
+@mixin mobile {
+    @media (max-width: 770px) {
+        @content;
+    }
+}
+ 
+.content {
+    height: 60vh;
+    background-color: colorMap(main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    h1 {
+        font-size: 70px;
+        margin-bottom: 20px;
+    }
+
+    .details {
+        font-size: 24px;
+        font-weight: 300;
+        margin-bottom: 20px;
+        @include mobile { text-align: center; }
+    }
+
+    .input-content {
+        display: flex;
+        width: 50%; height: 40px;
+        background-color: colorMap(plain);
+        justify-content: space-between;
+        border: 1px solid lightgray;
+        @include mobile { width: 80%; }
+
+        input { 
+            flex: 8;
+            border: none; 
+            padding-left: 20px;
+        }
+
+        button { 
+            flex: 1; 
+            border: none;
+            background-color: colorMap(submit);
+            color: white;
+        }
+    }
+}

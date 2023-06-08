@@ -1,0 +1,18 @@
+.paywall {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    button {
+        border: none;
+        width: 120px;
+        border-radius: 5px;
+        padding: 20px;
+        background-color: black;
+        color: white;
+        font-weight: 400;
+        cursor: pointer;
+    }
+
+}

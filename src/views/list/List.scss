@@ -1,0 +1,42 @@
+@mixin marginSet { margin: 20px; }
+
+h1 { @include marginSet; }
+
+@mixin mobile {
+    @media (max-width: 770px) {
+        @content;
+    }
+}
+
+.listing {
+    display: flex;
+    justify-content: space-between;
+
+    .filter {
+        @include marginSet;
+        @include mobile {
+            width: 0px 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        span { 
+            font-size: x-large;
+            font-weight: 600;
+            margin-right: 20px;
+            @include mobile { margin-right: 0px; }
+        }
+
+        select {
+            padding: 10px;
+            margin-right: 20px;
+            @include mobile { margin: 10px 0px; }
+
+            option {
+                font-family: 'Montserrat', sans-serif;
+                font-size: medium;
+            }
+        }
+    }
+    
+}

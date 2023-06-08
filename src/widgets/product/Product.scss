@@ -1,0 +1,62 @@
+$map: (plain: white, primary: #f5fbfd, secondary: #e9f5f5, info: rgba(0, 0, 0, 0.2));
+
+@function colorMap($key) {
+    @return map-get($map, $key);
+ }
+ 
+
+.product {
+    flex: 2;
+    margin: 5px;
+    min-width: 250px; height: 350px;
+    display: flex; align-items: center;
+    justify-content: center;
+    background-color: colorMap(primary);
+    position: relative;
+    
+    .encircle {
+        width: 200px; height: 200px;
+        border-radius: 50%;
+        background-color: colorMap(plain);
+        position: absolute;
+    }
+
+    img {
+        height: 75%;
+        z-index: 2;
+    }
+
+    &-info {
+        display: flex;
+        width: 100%; height: 100%;
+        top: 0px; left: 0px;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        background-color: colorMap(info);
+        opacity: 0; z-index: 3;
+        transition: all 0.5s ease;
+        cursor: pointer;
+
+        &:hover { opacity: 1; }
+
+        .icon {
+            display: flex;
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            margin: 10px;
+            align-items: center;
+            background-color: colorMap(plain);
+            justify-content: center;
+            transition: all 0.5s ease;
+
+            &:hover {
+                background-color: colorMap(secondary);
+                transform: scale(1.1);
+            }
+          
+
+        }
+    }
+    
+}

@@ -1,0 +1,35 @@
+$map: (gradient: rgba(255, 255, 255, 0.5), plain: white, button: teal);
+
+@function colorMap($key) {
+    @return map-get($map, $key);
+}
+
+@mixin mobile {
+    @media (max-width: 770px) {
+        @content;
+    }
+}
+
+.register {
+    display: flex;
+    width: 100vw; height: 100vh;
+    background: linear-gradient(colorMap(gradient), colorMap(gradient)), url('https://images.pexels.com/photos/6984661/pexels-photo-6984661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+    center;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+
+    //careful with naming conventions same name will carry properties across different stylesheets
+    &-wrapper {
+        width: 40%;
+        padding: 20px;
+        background-color: colorMap(plain);
+        border-radius: 25px;
+        @include mobile { width: 75%; }
+
+        h1 { 
+            font-size: 25px; 
+            font-weight: 300;
+        }
+    }
+}

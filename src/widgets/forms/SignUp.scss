@@ -1,0 +1,32 @@
+$map: (plain: white, action: teal);
+
+@function colorMap($key) {
+    @return map-get($map, $key);
+}
+
+.signup {
+    display: flex;
+    flex-wrap: wrap;
+
+    input {
+        flex: 1;
+        min-width: 40%;
+        margin: 20px 10px 0px 0px;
+        padding: 10px;
+    }
+
+    span {
+        font-size: 12px;
+        margin: 20px 0px;
+    }
+
+    button {
+        width: 40%;
+        border: none;
+        padding: 15px 20px;
+        background-color: colorMap(action);
+        color: colorMap(plain);
+        border-radius: 25px;
+        cursor: pointer;
+    }
+}
